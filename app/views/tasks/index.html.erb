@@ -1,7 +1,8 @@
-<h1>Tasks</h1>
+<h1>My to-do list</h1>
 
-<ul>
-  <% @tasks.each do |task| %>
-  <li><%= task.description %> | <%= link_to "Delete task", task_url(task), method: "delete" %></li>
-  <% end %>
-</ul>
+<% @tasks.each do |task| %>
+  <div class="well well-sm">
+  <%= task.description %> <%= link_to "Delete", task_url(task), method: "delete", class: "pull-right" %>
+  </div>
+<% end %>
+
