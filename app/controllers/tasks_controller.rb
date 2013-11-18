@@ -10,4 +10,15 @@ class TasksController < ApplicationController
     redirect_to tasks_url
   end
 
+  def new
+    @task = Task.new
+  end
+
+  def create
+    t = Task.new
+    t.description = params[:task][:description]
+    t.save
+    redirect_to tasks_url
+  end
+
 end
