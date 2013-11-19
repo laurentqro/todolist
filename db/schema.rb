@@ -15,6 +15,8 @@ ActiveRecord::Schema.define(version: 20131118223308) do
 
   create_table "tasks", force: true do |t|
     t.string   "description"
+    t.string   "status",      default: "open"
+    t.string   "color"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

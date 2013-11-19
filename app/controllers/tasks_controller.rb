@@ -17,6 +17,8 @@ class TasksController < ApplicationController
   def create
     t = Task.new
     t.description = params[:task][:description]
+    t.status = params[:task][:status]
+    t.color = params[:task][:color]
     t.save
     redirect_to tasks_url
   end
