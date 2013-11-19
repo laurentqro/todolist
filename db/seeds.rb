@@ -8,6 +8,7 @@
 
 Task.destroy_all
 tasks = ["buy milk", "check flights", "send postcards to mum", "book table for two at fish place"]
+colors = %w[MistyRose Plum Thistle Lavender LavenderBlush LemonChiffon LightBlue LightGreen LightSteelBlue PaleVioletRed PeachPuff]
 tasks.each do |task|
-  Task.create description: task
+  Task.create description: task, color: colors.sample
 end
