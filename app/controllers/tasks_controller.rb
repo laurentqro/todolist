@@ -15,10 +15,11 @@ class TasksController < ApplicationController
   end
 
   def create
+    colors = %w[MistyRose Plum Thistle Lavender LavenderBlush LemonChiffon LightBlue LightGreen LightSteelBlue PaleVioletRed PeachPuff]
     t = Task.new
     t.description = params[:task][:description]
-    t.status = params[:task][:status]
-    t.color = params[:task][:color]
+    t.status = "open"
+    t.color = colors.sample
     t.save
     redirect_to tasks_url
   end
