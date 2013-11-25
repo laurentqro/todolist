@@ -5,6 +5,16 @@ class TasksController < ApplicationController
     @task = Task.new
   end
 
+  def edit
+    @task = Task.find_by(id: params[:id])
+  end
+
+  def update
+    @task = Task.find_by(id: params[:id])
+    @task.update description: params[:task][:description], color: params[:task][:color], status: params[:task][:status]
+    redirect_to root_url
+  end
+
   def destroy
     @task = Task.find_by(id: params[:id])
     @task.destroy

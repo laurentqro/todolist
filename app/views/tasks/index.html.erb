@@ -11,6 +11,7 @@
 <% @tasks.each do |task| %>
   <div class="well well-lg" style="background-color:<%= task.color %>;">
   <%= link_to ('<i class="fa fa-circle-o fa-2x"></i>'.html_safe), task_url(task), method: "delete", class: "circle" %> <span class="task-text"><%= task.description %></span>
+  <%= link_to "Edit task", edit_task_url(task) %>
   </div>
 <% end %>
 
