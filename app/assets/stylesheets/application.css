@@ -13,7 +13,18 @@
  *= require_self
  */
 
-.task {
+h1, p {
+  font-family: 'Lato', sans-serif;
+}
+
+.task-text {
   font-size: 18px;
   color: #565656;
+  padding: 20px;
+  font-family: 'Lato', sans-serif;
+}
+
+.circle {
+  color: #bfbfbf;
+  font-size: 20px;
 }
