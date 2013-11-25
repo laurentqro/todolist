@@ -1,10 +1,10 @@
 <h1>Hello Louise!</h1>
 
-
-<%= form_for (@task) do |t| %>
-  <%= t.text_field :description %>
-  <%= t.hidden_field :color %>
-<% end %>
+<div role="form">
+  <%= form_for (@task) do |t| %>
+    <%= t.text_field :description, class: "form-control" %>
+  <% end %>
+</div>
 
 <hr>
 
