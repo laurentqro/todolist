@@ -1,4 +1,7 @@
-<%= form_for (task) do |t| %>
-  <%= t.text_field :description %>
-  <%= t.submit %>
-<% end %>
+<div role="form">
+  <%= form_for(@task) do |t| %>
+    <%= t.text_field :description, class: "form-control" %>
+    <%= t.hidden_field :color, class: "form-control" %>
+    <%= t.hidden_field :status, class: "form-control" %>
+  <% end %>
+</div>

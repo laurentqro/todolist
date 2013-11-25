@@ -1,7 +1,4 @@
 <h1>Add new task</h1>
 
-<%= form_for (@task) do |t| %>
-  <%= t.text_field :description %>
-  <%= t.submit %>
-<% end %>
+<%= render 'form' %>
 
