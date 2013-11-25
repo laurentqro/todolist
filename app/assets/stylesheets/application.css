@@ -24,7 +24,6 @@ h1, p {
   font-family: 'Lato', sans-serif;
 }
 
-.circle {
-  color: #bfbfbf;
-  font-size: 20px;
+.edit {
+  padding-right: 15px;
 }
