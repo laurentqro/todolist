@@ -1,5 +1,6 @@
 <div role="form">
   <%= form_for(@task) do |t| %>
+    <%= t.label :description, class: "sr-only" %>
     <%= t.text_field :description, class: "form-control" %>
     <%= t.hidden_field :color, class: "form-control" %>
     <%= t.hidden_field :status, class: "form-control" %>

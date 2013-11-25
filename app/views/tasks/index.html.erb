@@ -2,7 +2,10 @@
 
 <div role="form">
   <%= form_for (@task) do |t| %>
-    <%= t.text_field :description, class: "form-control" %>
+    <div class="form-group">
+      <%= t.label :description, class: "sr-only" %>
+      <%= t.text_field :description, class: "form-control" %>
+    </div>
   <% end %>
 </div>
 
@@ -11,8 +14,10 @@
 <% @tasks.each do |task| %>
   <div class="well well-lg" style="background-color:<%= task.color %>;">
   <span class="task-text"><%= task.description %></span>
-  <%= link_to ('<i class="fa fa-pencil-square-o fa-lg"></i>'.html_safe), edit_task_url(task), class: "edit" %>
-  <%= link_to ('<i class="fa fa-trash-o fa-lg"></i>'.html_safe), task_url(task), method: "delete", class: "trash" %>
+
+  <div class="pull-right">
+    <%= link_to ('<i class="fa fa-pencil-square-o fa-2x"></i>'.html_safe), edit_task_url(task), class: "edit" %>
+    <%= link_to ('<i class="fa fa-trash-o fa-2x"></i>'.html_safe), task_url(task), method: "delete", class: "trash" %></div>
   </div>
 <% end %>
 
