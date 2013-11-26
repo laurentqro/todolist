@@ -6,12 +6,12 @@
 
 <% @open_tasks.each do |task| %>
   <div class="well well-lg" style="background-color:<%= task.color %>;">
-    <%= link_to ('<i class="fa fa-circle-o fa-2x"></i>'.html_safe), close_task_url(task), method: "patch" %>
+    <%= link_to ('<i class="fa fa-circle-o fa-2x"></i>'.html_safe), close_task_url(task), method: "patch", title: "Done!" %>
     <span class="task-text"><%= task.description %></span>
 
     <div class="pull-right">
-      <%= link_to ('<i class="fa fa-pencil-square-o fa-2x"></i>'.html_safe), edit_task_url(task), class: "edit" %>
-      <%= link_to ('<i class="fa fa-trash-o fa-2x"></i>'.html_safe), task_url(task), method: "delete", class: "trash" %>
+      <%= link_to ('<i class="fa fa-pencil-square-o fa-2x"></i>'.html_safe), edit_task_url(task), class: "edit", title: "edit this task" %>
+      <%= link_to ('<i class="fa fa-trash-o fa-2x"></i>'.html_safe), task_url(task), method: "delete", class: "trash", title: "delete this task" %>
     </div>
   </div>
 <% end %>
@@ -21,9 +21,9 @@
 <h3>Completed tasks</h3>
 
 <% @closed_tasks.each do |task| %>
-  <div class="well well-lg" style="color:gray;">
-    <%= link_to ('<i class="fa fa-check-circle-o fa-2x"></i>'.html_safe), open_task_url(task), method: "patch" %>
-    <span class="task-text" style="color:gray;"><%= task.description %></span>
+  <div class="well well-lg task-closed" style="color:gray;">
+    <%= link_to ('<i class="fa fa-check-circle-o fa-2x"></i>'.html_safe), open_task_url(task), method: "patch", title: "Click here to re-open this task" %>
+    <span class="task-text task-closed"><%= task.description %></span>
   </div>
 <% end %>
 

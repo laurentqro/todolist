@@ -27,3 +27,8 @@ h1, p {
 .edit {
   padding-right: 15px;
 }
+
+.task-closed {
+  color: #a0a0a0;
+  font-style: italic;
+}
