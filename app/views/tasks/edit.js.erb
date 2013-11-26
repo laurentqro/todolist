@@ -1,0 +1,2 @@
+$('#<%= dom_id @task %>').replaceWith('<%= j(render 'ajax_edit_form') %>');
+$('#edit_task_<%= @task.id %> #task_description').focus()

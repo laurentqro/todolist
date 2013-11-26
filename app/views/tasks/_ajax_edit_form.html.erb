@@ -1,0 +1,9 @@
+<div role="form" class="edit_task_<%= @task.id %>_form">
+  <%= form_for @task, remote: true do |t| %>
+    <%= t.label :description, class: "sr-only" %>
+    <%= t.text_field :description, class: "form-control input-lg", placeholder: "Create a new task" %>
+    <%= t.hidden_field :color, class: "form-control" %>
+    <%= t.hidden_field :status, class: "form-control" %>
+  <% end %>
+</div>
+<br>
