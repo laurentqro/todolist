@@ -1,24 +1,11 @@
 class TasksController < ApplicationController
 
+  before_action :find_task, only: [:edit, :update, :destroy, :open_task, :close_task]
+
   def index
-    @tasks = Task.all order: "updated_at DESC"
     @task = Task.new
-  end
-
-  def edit
-    @task = Task.find_by(id: params[:id])
-  end
-
-  def update
-    @task = Task.find_by(id: params[:id])
-    @task.update description: params[:task][:description], color: params[:task][:color], status: params[:task][:status]
-    redirect_to root_url
-  end
-
-  def destroy
-    @task = Task.find_by(id: params[:id])
-    @task.destroy
-    redirect_to tasks_url
+    @open_tasks = Task.where(status: "open")
+    @closed_tasks = Task.where(status: "closed")
   end
 
   def new
@@ -29,6 +16,33 @@ class TasksController < ApplicationController
     colors = %w[MistyRose Plum Thistle Lavender LavenderBlush LemonChiffon LightBlue LightGreen LightSteelBlue PaleVioletRed PeachPuff]
     Task.create description: params[:task][:description], status: "open", color: colors.sample
     redirect_to tasks_url
+  end
+
+  def edit
+  end
+
+  def update
+    @task.update description: params[:task][:description], color: params[:task][:color], status: params[:task][:status]
+    redirect_to root_url
+  end
+
+  def destroy
+    @task.destroy
+    redirect_to tasks_url
+  end
+
+  def close_task
+    @task.update status: "closed"
+    redirect_to root_url
+  end
+
+  def open_task
+    @task.update status: "open"
+    redirect_to root_url
+  end
+
+  def find_task
+    @task = Task.find_by(id: params[:id])
   end
 
 end
