@@ -1,0 +1,9 @@
+<div id="<%= dom_id task %>" class="well well-lg task-open" style="background-color:<%= task.color %>;">
+  <%= link_to ('<i class="fa fa-circle-o fa-2x"></i>'.html_safe), close_task_url(task), method: "patch", title: "Done!" %>
+  <span class="task-text task-open"><%= task.description %></span>
+
+  <div class="pull-right">
+    <%= link_to ('<i class="fa fa-pencil-square-o fa-2x"></i>'.html_safe), edit_task_url(task), class: "edit", title: "edit this task", remote: true %>
+    <%= link_to ('<i class="fa fa-trash-o fa-2x"></i>'.html_safe), task_url(task), method: "delete", class: "trash", title: "delete this task", remote: true %>
+  </div>
+</div>
