@@ -15,7 +15,7 @@ class TasksController < ApplicationController
   def create
     colors = %w[MistyRose Plum Thistle Lavender LavenderBlush LemonChiffon LightBlue LightGreen LightSteelBlue PaleVioletRed PeachPuff]
     Task.create description: params[:task][:description], status: "open", color: colors.sample
-    redirect_to tasks_url
+    redirect_to root_url
   end
 
   def edit
@@ -28,7 +28,10 @@ class TasksController < ApplicationController
 
   def destroy
     @task.destroy
-    redirect_to tasks_url
+    respond_to do |format|
+      format.html { redirect_to root_url }
+      format.js
+    end
   end
 
   def close_task
