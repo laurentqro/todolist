@@ -32,3 +32,16 @@ h1, p {
   color: #a0a0a0;
   font-style: italic;
 }
+
+.fa {
+  opacity: 0.3;
+}
+
+.fa:hover {
+  transition: opacity 0.3s;
+  opacity: 0.8;
+}
+
+a:hover {
+  opacity: 1;
+}
