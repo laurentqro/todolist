@@ -8,10 +8,12 @@
 
 Task.destroy_all
 
-tasks = ["buy milk", "check flights", "send postcards to mum", "book table for two at fish place", "ring auntie Josie"]
+tasks = ["buy milk", "check flights", "send postcards to mum", "book table for two at fish place", "ring auntie Josie", "Go to the swimming pool", "Buy chocolate"]
 colors = %w[MistyRose Plum Thistle Lavender LavenderBlush LemonChiffon LightBlue LightGreen LightSteelBlue PaleVioletRed PeachPuff]
 status = %w[open closed]
 
 tasks.each do |task|
   Task.create description: task, color: colors.sample, status: status.sample
 end
+
+puts "There are now #{tasks.count} in your database."
