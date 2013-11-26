@@ -4,27 +4,16 @@
 
 <hr>
 
-<% @open_tasks.each do |task| %>
-  <div id="<%= dom_id task %>" class="well well-lg task-open" style="background-color:<%= task.color %>;">
-    <%= link_to ('<i class="fa fa-circle-o fa-2x"></i>'.html_safe), close_task_url(task), method: "patch", title: "Done!" %>
-    <span class="task-text task-open"><%= task.description %></span>
-
-    <div class="pull-right">
-      <%= link_to ('<i class="fa fa-pencil-square-o fa-2x"></i>'.html_safe), edit_task_url(task), class: "edit", title: "edit this task" %>
-      <%= link_to ('<i class="fa fa-trash-o fa-2x"></i>'.html_safe), task_url(task), method: "delete", class: "trash", title: "delete this task", remote: true %>
-    </div>
-  </div>
+<% @open_tasks.each do |t| %>
+  <%= render 'open_task', task: t %>
 <% end %>
 
 <hr>
 
 <h3>Completed tasks <small>Pat yourself on the back</small></h3>
 
-<% @closed_tasks.each do |task| %>
-  <div class="well well-lg task-closed">
-    <%= link_to ('<i class="fa fa-check-circle-o fa-2x"></i>'.html_safe), open_task_url(task), method: "patch", title: "Click here to re-open this task" %>
-    <span class="task-text task-closed"><%= task.description %></span>
-  </div>
+<% @closed_tasks.each do |t| %>
+  <%= render 'closed_task', task: t %>
 <% end %>
 
 
