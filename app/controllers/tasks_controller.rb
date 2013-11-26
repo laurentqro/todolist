@@ -27,7 +27,11 @@ class TasksController < ApplicationController
 
   def update
     @task.update description: params[:task][:description], color: params[:task][:color], status: params[:task][:status]
-    redirect_to root_url
+
+    respond_to do |format|
+      format.html { redirect_to root_url }
+      format.js
+    end
   end
 
   def destroy
