@@ -1,0 +1,14 @@
+<div class="page-header">
+  <h2>Sign in</h2>
+</div>
+
+<%= form_tag sessions_url do %>
+  <div class="form-group">
+    <%= label_tag :email %>
+    <%= text_field_tag :email, "", class: "form-control input-lg" %>
+    <br>
+    <%= label_tag :password %>
+    <%= text_field_tag :password, "", type: "password", class: "form-control input-lg" %>
+  </div>
+  <%= submit_tag "Sign me in", class: "btn btn-primary btn-lg" %>
+<% end %>

@@ -2,10 +2,15 @@ Todolist::Application.routes.draw do
 
   root 'tasks#index'
 
-  resources :users
-    get "/users/new" => 'users#new', as: 'sign_up'
   resources :tasks
-    patch "/close_task/:id" => 'tasks#close_task',  as: 'close_task'
-    patch "/open_task/:id"  => 'tasks#open_task',   as: 'open_task'
+  patch   "close_task/:id" => 'tasks#close_task'  , as: 'close_task'
+  patch   "open_task/:id"  => 'tasks#open_task'   , as: 'open_task'
+
+  resources :users
+  get     "signup"          => 'users#new'         , as: 'signup'
+
+  resources :sessions
+  get     "signin"          => 'sessions#new'   , as: 'signin'
+  get     "signout"         => 'sessions#destroy'  , as: 'signout'
 
 end
