@@ -1,4 +1,8 @@
-<h1>Hello.</h1>
+<% if session[:user_id] %>
+  <h1>Hello <%= @user.name %></h1>
+<% else %>
+  <h1>Hello.</h1>
+<% end %>
 
 <%= render 'form' %>
 
