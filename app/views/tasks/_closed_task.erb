@@ -1,4 +1,8 @@
-<div class="well well-lg task-closed">
-  <%= link_to ('<i class="fa fa-check-circle-o fa-2x"></i>'.html_safe), open_task_url(task), method: "patch", title: "Click here to re-open this task" %>
+<div id="<%= dom_id task %>" class="well well-lg task-closed">
+  <%= link_to ('<i class="fa fa-check-circle-o fa-2x"></i>'.html_safe), open_task_url(task), method: "patch", title: "re-open this task" %>
   <span class="task-text task-closed"><%= task.description %></span>
+
+  <div class="pull-right">
+    <%= link_to ('<i class="fa fa-trash-o fa-2x"></i>'.html_safe), task_url(task), method: "delete", class: "trash", title: "delete this task", remote: true %>
+  </div>
 </div>
