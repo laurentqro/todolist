@@ -4,8 +4,8 @@ class TasksController < ApplicationController
 
   def index
     @task = Task.new
-    @open_tasks = Task.where(status: "open")
-    @closed_tasks = Task.where(status: "closed")
+    @open_tasks = Task.where(status: "open").order('updated_at DESC')
+    @closed_tasks = Task.where(status: "closed").order('updated_at DESC')
   end
 
   def new
