@@ -13,7 +13,7 @@
  *= require_self
  */
 
-h1, p {
+h1, h2, p, label {
   font-family: 'Lato', sans-serif;
 }
 
