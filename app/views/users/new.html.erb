@@ -1,0 +1,21 @@
+<div class="page-header">
+  <h2>Sign up for your very own to-do list</small></h2>
+</div>
+
+  <%= form_for @user do |f| %>
+    <div class="form-group">
+      <%= f.label :name %>
+      <%= f.text_field :name, class: "form-control input-lg", placeholder: "Enter your name" %>
+      <br>
+      <%= f.label :email %>
+      <%= f.text_field :email, class: "form-control input-lg", placeholder: "Enter your email" %>
+      <span class="help-block">We promise we won't spam you.</span>
+      <br>
+      <%= f.label :password, "Choose a password" %>
+      <%= f.text_field :password, type: "password", class: "form-control input-lg", placeholder: "Password" %>
+    </div>
+    <%= f.submit "Sign up", class: "btn btn-primary btn-lg" %>
+
+  <% end %>
+
+
