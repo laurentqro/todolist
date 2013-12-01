@@ -13,8 +13,13 @@
  *= require_self
  */
 
-h1, h2, p, label {
+h1, h2, p, label, .navbar {
   font-family: 'Lato', sans-serif;
+}
+
+.navbar p, .navbar li a {
+  font-size: 17px;
+  padding-top: 8px;
 }
 
 .task-text {
