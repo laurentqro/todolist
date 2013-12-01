@@ -1,17 +1,38 @@
-<%= render 'form' %>
+<% if session[:user_id].present? %>
 
-<hr>
+  <% if @open_tasks.count > 0 %>
+    <%= render 'form' %>
+    <hr>
+    <% @open_tasks.each do |t| %>
+      <%= render 'open_task', task: t %>
+    <% end %>
+  <% else %>
+    <p class="lead">Nothing here!</p>
+    <p>Use the field below to create your first task:</p>
+    <br>
+    <%= render 'form' %>
+  <% end %>
 
-<% @open_tasks.each do |t| %>
-  <%= render 'open_task', task: t %>
-<% end %>
+  <% if @closed_tasks.count > 0 %>
+  <hr>
+  <h3>Completed tasks</h3>
 
-<hr>
+  <% @closed_tasks.each do |t| %>
+    <%= render 'closed_task', task: t %>
+  <% end %>
+  <% end %>
 
-<h3>Completed tasks <small>Pat yourself on the back</small></h3>
+<% else %>
 
-<% @closed_tasks.each do |t| %>
-  <%= render 'closed_task', task: t %>
+  <div class="jumbotron">
+    <h1>Hi.</h1>
+    <br>
+    <p>Looks like you have not yet signed up for your Happy To-Do List.</p>
+    <p>What are you waiting for?</p>
+    <br>
+    <p><%= link_to "Sign up!", signup_url, class: "btn btn-primary btn-lg" %></p>
+  </div>
+
 <% end %>
 
 
