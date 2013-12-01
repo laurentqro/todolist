@@ -14,9 +14,10 @@ class UsersController < ApplicationController
       if @user.save
         session[:user_id] = @user.id
         UserMailer.welcome(@user).deliver
+
         format.html { redirect_to root_url, notice: "Welcome!" }
       else
-        render 'new'
+        format.html render 'new'
       end
     end
   end
