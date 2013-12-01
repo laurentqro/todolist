@@ -13,6 +13,10 @@
  *= require_self
  */
 
+body {
+  padding-top: 95px;
+}
+
 h1, h2, p, label, .navbar {
   font-family: 'Lato', sans-serif;
 }
