@@ -1,5 +1,5 @@
 class UserMailer < ActionMailer::Base
-  default from: "Happytodolist.com <laurent@happytodolist.com>"
+  default from: "\"Happytodolist.com\" <laurent@happytodolist.com>"
 
   def welcome(user)
     @user = user
