@@ -1,9 +1,9 @@
 class UserMailer < ActionMailer::Base
-  default from: "laurentcurau@gmail.com"
+  default from: "laurent@happytodolist.com"
 
   def welcome(user)
     @user = user
-    @login_url = "http://www.happytodos.herokuapp.com/login"
+    @signin_url = "http://www.happytodolist.com/signin"
     mail to: @user.email, subject: "Thank you for signing up"
   end
 
