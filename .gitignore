@@ -17,3 +17,6 @@
 
 # Ignore file containing confidential email credentials
 email.yml
+
+# Ignore application configuration
+/config/application.yml
