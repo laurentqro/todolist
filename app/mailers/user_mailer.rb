@@ -1,10 +1,11 @@
 class UserMailer < ActionMailer::Base
-  default from: "laurent@happytodolist.com"
+  default from: "Happytodolist.com <laurent@happytodolist.com>"
 
   def welcome(user)
     @user = user
     @signin_url = "http://www.happytodolist.com/signin"
-    mail to: @user.email, subject: "Thank you for signing up"
+    email_with_name = "#{@user.name} <#{@user.email}>"
+    mail to: email_with_name, subject: "Thank you for signing up"
   end
 
 end
