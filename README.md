@@ -1,9 +1,10 @@
-== Welcome to Happy To-Do List.
+# Welcome to Happy To-Do List.
 
-Happy To-Do List is a simple CRUD task manager using all the things I learnt during my time at Starter School and after.
+**Happy To-Do List is a simple CRUD task manager using all the things I learnt during my time at Starter School and after.**
 
 Here is the learning I applied toward creating this app:
 
++ Git: status, commit, diff, push, pull, checkout -b, merge.
 + User sign in and sign out implemented from scratch.
 + Welcome email using ActionMailer and Mandrill.
 + Credentials secured using environment variables and the [Figaro gem](https://github.com/laserlemon/figaro).
