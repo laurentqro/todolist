@@ -14,22 +14,22 @@
   <% end %>
 
   <% if @closed_tasks.count > 0 %>
-  <hr>
-  <h3>Completed tasks</h3>
+    <hr>
+    <h3>Completed tasks</h3>
 
-  <% @closed_tasks.each do |t| %>
-    <%= render 'closed_task', task: t %>
-  <% end %>
+    <% @closed_tasks.each do |t| %>
+      <%= render 'closed_task', task: t %>
+    <% end %>
   <% end %>
 
 <% else %>
 
   <div class="jumbotron">
-    <h1>Hi.</h1>
+    <h2>Hello,</h2>
     <br>
-    <p>Looks like you have not yet signed up for your Happy To-Do List.</p>
+    <p>Looks like you have not yet signed up for your <br><span class="brand">Happy To-Do List</span>.</p>
+    <br>
     <p>What are you waiting for?</p>
-    <br>
     <p><%= link_to "Sign up!", signup_url, class: "btn btn-primary btn-lg" %></p>
   </div>
 

@@ -19,7 +19,7 @@ class TasksController < ApplicationController
 
   def create
     @user = User.find_by(id: session[:user_id])
-    colors = %w[MistyRose Plum Thistle Lavender LavenderBlush LemonChiffon LightBlue LightGreen LightSteelBlue PaleVioletRed PeachPuff]
+    colors = %w[LightGoldenRodYellow MintCream OldLace DarkSeaGreen MistyRose Plum Thistle Lavender LavenderBlush LemonChiffon LightBlue RosyBrown LightSteelBlue PaleVioletRed PeachPuff]
     @user.tasks.create description: params[:task][:description], status: "open", color: colors.sample
     redirect_to root_url
   end

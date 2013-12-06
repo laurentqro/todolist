@@ -15,15 +15,52 @@
 
 body {
   padding-top: 95px;
+  background-color: #F8F8F8;
 }
 
-h1, h2, p, label, .navbar {
+.container {
+  max-width: 1024px;
+}
+
+.brand {
+  font-family: 'coquette';
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+span.brand {
+  font-style: regular;
+  font-weight: 200;
+  font-size: 34px;
+}
+
+h1.brand {
+  color: LightSteelBlue;
+  font-style: bold;
+  font-weight: 700;
+  font-size: 70px;
+  padding-bottom: 40px;
+  padding-top: 0;
+  text-align: center;
+  }
+
+h1.brand a:link {
+  color: LightSteelBlue;
+}
+
+h2, p, label, .navbar {
   font-family: 'Lato', sans-serif;
 }
 
 .navbar p, .navbar li a {
   font-size: 17px;
   padding-top: 8px;
+}
+
+.jumbotron {
+  text-align: center;
 }
 
 .task-text {
@@ -49,8 +86,4 @@ h1, h2, p, label, .navbar {
 .fa:hover {
   transition: opacity 0.3s;
   opacity: 0.8;
-}
-
-a:hover {
-  opacity: 1;
 }
