@@ -1,0 +1,15 @@
+  <h2>Edit your details</h2>
+  <br>
+  <%= form_for @user, :html => { role: "form" } do |f| %>
+    <div class="form-group">
+      <%= f.label :name %>
+      <%= f.text_field :name, class: "form-control input-lg", placeholder: "Enter your name" %>
+      <br>
+      <%= f.label :email %>
+      <%= f.text_field :email, class: "form-control input-lg", placeholder: "Enter your email" %>
+      <br>
+      <%= f.label :password %>
+      <%= f.text_field :password, type: "password", class: "form-control input-lg", placeholder: "Password" %>
+    </div>
+    <%= f.submit "Submit", class: "btn btn-primary btn-lg" %>
+  <% end %>
