@@ -60,23 +60,34 @@ h2, p, label, .navbar {
 
 .jumbotron {
   text-align: center;
+  background-color: Lavender;
+  max-width: 550px;
+  margin: 0 auto;
+}
+
+.task {
+  font-family: 'Lato', sans-serif;
+  text-rendering: optimizeLegibility;
+  font-size: 16px;
+}
+
+.task-open {
+  color: #565656;
+}
+
+.task-closed {
+  color: #bfbfbf;
+  font-style: italic;
 }
 
 .task-text {
-  text-rendering: optimizeLegibility;
-  font-size: 18px;
-  color: #565656;
-  padding: 20px;
-  font-family: 'Lato', sans-serif;
+  position: relative;
+  bottom: 6px;
+  left: 25px;
 }
 
 .edit {
   padding-right: 15px;
-}
-
-.task-closed {
-  color: #a0a0a0;
-  font-style: italic;
 }
 
 .fa {
