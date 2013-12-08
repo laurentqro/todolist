@@ -30,4 +30,13 @@ class UsersController < ApplicationController
     end
   end
 
+  def update
+    @user = User.find_by(id: session[:user_id])
+    @user.update  name: params[:user][:name],
+                  email: params[:user][:email],
+                  password: params[:user][:password],
+                  password_confirmation: params[:user][:password]
+    redirect_to root_url
+  end
+
 end
