@@ -14,9 +14,9 @@
  */
 
 body {
-  padding-top: 20px;
+  padding: 20px 0 40px 0;
   background-color: #F8F8F8;
-  background-image:url('patterns/green_dust_scratch.png');
+  background-image:url('patterns/vichy.png');
 }
 
 nav {
@@ -28,8 +28,13 @@ nav {
 .container {
   max-width: 1024px;
   background-color: #ffffff;
-  border-radius: 15px;
   padding: 20px 60px 60px 60px;
+  -webkit-box-shadow: 0 0 6px rgba(0,0,0,0.3);
+  -moz-box-shadow: 0 0 6px rgba(0,0,0,0.3);
+  box-shadow: 0 0 6px rgba(0,0,0,0.3);
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
 }
 
 .brand {
@@ -81,4 +86,9 @@ h2, p, label, .navbar {
 .fa:hover {
   transition: opacity 0.3s;
   opacity: 0.8;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
 }
