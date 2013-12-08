@@ -16,7 +16,7 @@
     <nav>
       <% if session[:user_id].present? %>
         <%= link_to "Sign out", signout_url, class: "pull-right" %>
-        <p class="pull-left">Hello, <%= @user.name %>. Happy <%= Time.new.strftime("%A") %>!</p>
+        <p class="pull-left">Hello, <%= link_to @user.name, edit_user_url(@user.id) %>. Happy <%= Time.new.strftime("%A") %>!</p>
       <% else %>
         <p class="greeting">Already have an account? <%= link_to "Sign in", signin_url, class: "login" %></p>
       <% end %>
