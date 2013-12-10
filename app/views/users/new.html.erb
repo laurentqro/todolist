@@ -6,14 +6,46 @@
     <div class="form-group">
       <%= f.label :name %>
       <%= f.text_field :name, value: "", class: "form-control input-lg", placeholder: "Enter your name" %>
+      <% if @user.errors.any? %>
+        <ul class="alert-warning">
+          <% @user.errors.messages[:name].each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      <% end %>
       <br>
       <%= f.label :email %>
       <%= f.text_field :email, class: "form-control input-lg", placeholder: "Enter your email" %>
-      <span class="help-block">We promise we won't spam you.</span>
+      <span class="help-block">We won't spam you. We promise.</span>
+      <% if @user.errors.any? %>
+        <ul class="alert-warning">
+          <% @user.errors.messages[:email].each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      <% end %>
       <br>
       <%= f.label :password, "Choose a password" %>
       <%= f.text_field :password, type: "password", class: "form-control input-lg", placeholder: "Password" %>
+      <% if @user.errors.any? %>
+        <ul class="alert-warning">
+          <% @user.errors.messages[:password].each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      <% end %>
+      <br>
+      <%= f.label :password_confirmation, "Confirm your password" %>
+      <%= f.text_field :password_confirmation, type: "password", class: "form-control input-lg", placeholder: "Password again" %>
+      <% if @user.errors.any? %>
+        <ul class="alert-warning">
+          <% @user.errors.messages[:password_confirmation].each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      <% end %>
     </div>
+    <hr>
     <%= f.submit "Sign up", class: "btn btn-primary btn-lg" %>
   <% end %>
 

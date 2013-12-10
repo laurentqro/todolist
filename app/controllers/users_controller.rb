@@ -8,16 +8,16 @@ class UsersController < ApplicationController
     @user = User.create name: params[:user][:name],
                         email: params[:user][:email],
                         password: params[:user][:password],
-                        password_confirmation: params[:user][:password]
+                        password_confirmation: params[:user][:password_confirmation]
 
     respond_to do |format|
       if @user.save
         session[:user_id] = @user.id
         UserMailer.welcome(@user).deliver
 
-        format.html { redirect_to root_url, notice: "Welcome!" }
+        format.html { redirect_to root_url }
       else
-        format.html render 'new'
+        format.html { render 'new' }
       end
     end
   end
@@ -32,10 +32,11 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find_by(id: session[:user_id])
-    @user.update  name: params[:user][:name],
-                  email: params[:user][:email],
-                  password: params[:user][:password],
-                  password_confirmation: params[:user][:password]
+    @user.name = params[:user][:name]
+    @user.email = params[:user][:email]
+    @user.password = params[:user][:password]
+    @user.password_confirmation = params[:user][:password_confirmation]
+    @user.save
     redirect_to root_url
   end
 
