@@ -13,6 +13,7 @@ gem 'jbuilder', '~> 1.2'
 gem 'bcrypt-ruby', '~> 3.1.2'
 gem "actionmailer", "~> 4.0.1"
 gem "figaro"
+gem 'newrelic_rpm'
 
 group :development do
   # Use sqlite3 as the database for Active Record
