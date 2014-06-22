@@ -6,9 +6,7 @@
 
 Here is the learning I applied toward creating this app:
 
-+ Command line tools in the Mac OS X Terminal.
-+ Git: `status`, `commit`, `diff`, `push`, `pull`, `checkout -b`, `merge`.
-+ User sign in and sign out implemented from scratch.
++ User sign in and sign out, implemented from scratch.
 + Welcome email using ActionMailer and Mandrill.
 + Credentials secured using environment variables and the [Figaro gem](https://github.com/laserlemon/figaro).
 + Twitter Bootstrap CSS framework + custom styles.
